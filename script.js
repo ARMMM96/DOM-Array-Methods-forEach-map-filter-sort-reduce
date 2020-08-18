@@ -31,6 +31,13 @@ function doubleMoney() {
     return { ...user, money: user.money * 2 };
   });
 }
+
+// Filter only millionaires
+function showMillionaires() {
+  data = data.filter((user) => user.money > 1000000);
+  updateDOM();
+}
+
 // Add new object to data array
 function addData(obj) {
   data.push(obj);
@@ -71,3 +78,4 @@ doubleBtn.addEventListener('click', () => {
 });
 
 sortBtn.addEventListener('click', sortByRichest);
+showMillionairesBtn.addEventListener('click', showMillionaires);
